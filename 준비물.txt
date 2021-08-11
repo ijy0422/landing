@@ -1,0 +1,5 @@
+준비물 
+
+파이참
+
+flask, requests , BeautifulSoup
