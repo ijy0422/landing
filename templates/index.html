@@ -7,31 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-
-
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
 
     <title>랜딩 페이지 샘플</title>
+<!--
+Elegance Template
+https://templatemo.com/tm-528-elegance
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css')}}">
 
-      <!--flask-->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fullpage.min.css')}}">
 
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}">
 
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/flex-slider.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css')}}">
 
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css')}}">
 
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/fullpage.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css')}}">
 
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}">
-
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css')}}">
-
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css')}}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flex-slider.css')}}">
 
 
     <SCRIPT LANGUAGE="JavaScript">
@@ -48,6 +46,19 @@
           f.senduser.focus();
           return false;
          }
+
+         if (!f.age.value) {
+          alert("나이를 입력해주세요");
+          f.phone.focus();
+          return false;
+         }
+
+         if (!f.startup.value) {
+          alert("창업종목을 입력해주세요");
+          f.phone.focus();
+          return false;
+         }
+
          if (!f.phone.value) {
           alert("전화번호을 입력해주세요");
           f.phone.focus();
@@ -72,7 +83,6 @@
     <body>
     
     <div id="video">
-        <!--
         <div class="preloader">
             <div class="preloader-bounce">
                 <span></span>
@@ -80,12 +90,12 @@
                 <span></span>
             </div>
         </div>
--->
+
         <header id="header">
             <div class="container-fluid">
                 <div class="navbar">
                     <a href="#" id="logo" title="Elegance by TemplateMo">
-                        정책 자금
+                        <img src="{{ url_for('static', filename='images/flo.png') }}" alt="" style="width: 150px; height: 62px;">
                     </a>
                     <div class="navigation-row">
                         <nav id="navigation">
@@ -93,9 +103,9 @@
                             <div class="nav-box navbar-collapse">
                                 <ul class="navigation-menu nav navbar-nav navbars" id="nav">
                                     <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
-                                    <li data-menuanchor="slide02"><a href="#slide02">사업 계획서/제안서</a></li>
-                                    <li data-menuanchor="slide03"><a href="#slide03">회사 소개서</a></li>
-                                    <li data-menuanchor="slide04"><a href="#slide04">정부 지원 사업</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">사업 공고</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">회사소개</a></li>
+                                    <li data-menuanchor="slide04"><a href="#slide04">정책자금 활용사례</a></li>
                                     <li data-menuanchor="slide05"><a href="#slide05">기업 인증</a></li>
                                     <li data-menuanchor="slide06"><a href="#slide06">정책 자금</a></li>
                                     <li data-menuanchor="slide07"><a href="#slide07">상담 신청</a></li>
@@ -113,75 +123,9 @@
 
         <div id="fullpage" class="fullpage-default">
 
+
+            
             <div class="section animated-row" data-section="slide01">
-
-
-
-                <div class="daum_content">
-    <h2>중소 벤처 기업부 모집 공고</h2>
-
-    <ul>
-    {% for i in range(0, daum_len) %}
-
-    <a href="{{daum_href[i]}}">
-        <li>{{ daum[i] }}</li>
-    </a>
-
-    {% endfor %}
-
-        </ul>
-
-
-
-
-
-
-    </div>
-
-
-<div class="daum_content">
-    <h2>창업 진흥원 모집 공고</h2>
-
-
-     <ul>
-    {% for i in range(0, today_len) %}
-
-    <a href="{{today_href[i]}}">
-        <li>{{ today[i] }}</li>
-    </a>
-
-    {% endfor %}
-
-        </ul>
-
-
-
-
-
-
-    </div>
-
-
-<div class="daum_content">
-    <h2>모집 공고</h2>
-<ul>
-{% for i in clien %}
-
-    <li>{{ i }}</li>
-
-{% endfor %}
-    </ul>
-    </div>
-
-
-
-
-
-
-
-
-
-
 
 <!--
 
@@ -271,10 +215,10 @@
                         <span class="welcome-first animate" data-animate="fadeInUp">최고의 성공기업문서 제작</span>
                         <h1 class="welcome-title animate" data-animate="fadeInUp">비메품</h1>
                         <span class="welcome-first animate" data-animate="fadeInUp">과 함께 시작해보세요</span>
-                        <img src="https://static.wixstatic.com/media/e59db0_45a261b6888d415f88073bebcc144e44~mv2.png/v1/fill/w_200,h_199,al_c,q_85,usm_0.66_1.00_0.01/%EA%B7%B8%EB%A6%BC2.webp" alt="" style="padding: 5px 20px; margin-top: 50px;">
-                        <img src="https://static.wixstatic.com/media/e59db0_487533a6f6c44e779f08fda0d5e04eef~mv2.png/v1/fill/w_200,h_199,al_c,q_85,usm_0.66_1.00_0.01/%EA%B7%B8%EB%A6%BC3.webp" alt="" style="padding: 5px 20px; margin-top: 50px;">
-                       <img src="https://static.wixstatic.com/media/e59db0_1325498c4fa64285a07ca1fb53ca4af0~mv2.png/v1/fill/w_200,h_199,al_c,q_85,usm_0.66_1.00_0.01/%EA%B7%B8%EB%A6%BC4.webp" style="padding: 5px 20px; margin-top: 50px;" >
-                        <div class="scroll-down next-section animate data-animate="id="fadeInUp"><img src="{{ url_for('static', filename='images/mouse-scroll.png') }}" alt=""><span>Scroll Down</span></div>
+                        <img src="https://static.wixstatic.com/media/e59db0_45a261b6888d415f88073bebcc144e44~mv2.png/v1/fill/w_200,h_199,al_c,q_85,usm_0.66_1.00_0.01/%EA%B7%B8%EB%A6%BC2.webp" alt="" style="padding: 5px 20px; margin-top: 50px; width: 150px;">
+                        <img src="https://static.wixstatic.com/media/e59db0_487533a6f6c44e779f08fda0d5e04eef~mv2.png/v1/fill/w_200,h_199,al_c,q_85,usm_0.66_1.00_0.01/%EA%B7%B8%EB%A6%BC3.webp" alt="" style="padding: 5px 20px; margin-top: 50px; width: 150px;">
+                       <img src="https://static.wixstatic.com/media/e59db0_1325498c4fa64285a07ca1fb53ca4af0~mv2.png/v1/fill/w_200,h_199,al_c,q_85,usm_0.66_1.00_0.01/%EA%B7%B8%EB%A6%BC4.webp" style="padding: 5px 20px; margin-top: 50px; width: 150px;" >
+                        <div class="scroll-down next-section animate" data-animate="fadeInUp"><img src= "{{ url_for('static', filename='images/mouse-scroll.png') }}" alt=""><span>Scroll Down</span></div>
                     </div>
                 </div>
                 
@@ -289,41 +233,141 @@
                                     <div class="col-md-6">
                                         <div class="about-contentbox">
                                             <div class="animate" data-animate="fadeInUp">
-                                                <span>About Me</span>
-                                                <h2>Who am i?</h2>
-                                                <p>Credits go to <strong>Unsplash</strong> and <strong>Pexels</strong> for photos and video used in this template. Vivamus tincidunt, augue rutrum convallis volutpat, massa lacus tempus leo.</p>
+                                                
+                                                <h2 style="text-align:center; width:1260px; margin-bottom:90px;">사업 공고</h2>
+                                                 
+                                            </div>
+
+
+
+
+
+                                            <div class="daum_content">
+                                                <h2>중소 벤처 기업부 모집 공고</h2>
+                                            
+                                                <ul>
+                                                {% for i in range(0, daum_len) %}
+                                            
+                                                <a href="{{daum_href[i]}}" target="_blank">
+                                                    <li>{{ daum[i] }}</li>
+                                                </a>
+                                            
+                                                {% endfor %}
+                                            
+                                                    </ul>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                            
+                                            <div class="daum_content">
+                                                <h2>창업 진흥원 모집 공고</h2>
+                                            
+                                            
+                                                 <ul>
+                                                {% for i in range(0, today_len) %}
+                                            
+                                                <a href="{{today_href[i]}}" target="_blank">
+                                                    <li>{{ today[i] }}</li>
+                                                </a>
+                                            
+                                                {% endfor %}
+                                            
+                                                    </ul>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                                </div>
+                                            
+                                            <!--
+                                            <div class="daum_content">
+                                                <h2>모집 공고</h2>
+                                            <ul>
+                                            {% for i in clien %}
+                                            
+                                                <li>{{ i }}</li>
+                                            
+                                            {% endfor %}
+                                                </ul>
+                                                </div>
+                                                -->
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <div class="section animated-row" data-section="slide03">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                
+                                                <h2>회사 소개</h2>
+                                                <p>비메품은 "모든 비지니스를 만들고 품다" 라는 슬로건으로 <br>
+                                                    2019년 처음으로 서비스를 시작했습니다. <br>
+                                                    사업을 시작하고 싶지만 기획부터 디자인 마케팅이 <br>
+                                                    어려운 스타트업 대표님의 자금과 시간을 <br>
+                                                    아껴준다는 사명 아래 세상 모든 비지니스를 <br>
+                                                    품고 같이 성장하고자 열심히 노력하고 있습니다.  <br>
+                                                    비메품이 가진 플랫폼으로 파트너사와 함께 성장하여 상생할 수 있는 다양한 노력을 <br>
+                                                    시도하고 책임을 다 하겠습니다비메품은 지금도 고객사들의 사업을 <br>
+                                                    개선하고 성장시키기 위해 <br>
+                                                    새로운 도전을 계속 하고 있습니다. <br>
+                                                    다양한 비지니스를 만들고 품기 위해 비메품의 <br>
+                                                    노력은 지금도 진행중입니다.</p>
                                             </div>
                                             <div class="facts-list owl-carousel">
                                                 <div class="item animate" data-animate="fadeInUp">
                                                     <div class="counter-box">
-                                                        <i class="fa fa-trophy counter-icon" aria-hidden="true"></i><span class="count-number">32</span> Awards Won
+                                                        <img src="http://bmakerp.com/img/BM1.png" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="item animate" data-animate="fadeInUp">
                                                     <div class="counter-box">
-                                                        <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">4</span> Degrees
+                                                        <img src="http://bmakerp.com/img/BM2_1.png" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="item animate" data-animate="fadeInUp">
                                                     <div class="counter-box">
-                                                        <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">12</span> Working Years
+                                                        <img src="http://bmakerp.com/img/BM3.png" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="item animate" data-animate="fadeInUp">
                                                     <div class="counter-box">
-                                                        <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">6</span> Team Members
+                                                        <img src="http://bmakerp.com/img/BM4.png" alt="">
                                                     </div>
                                                 </div>
-                                                <div class="item animate" data-animate="fadeInUp">
-                                                    <div class="counter-box">
-                                                        <i class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Certificates
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="{{ url_for('static', filename='images/profile-girl.jpg') }}" class="rounded" alt=""></figure>
+                                        <figure class="about-img animate" data-animate="fadeInUp">
+                                            <a href="#slide07"><img src="http://www.sbac.co.kr/img_up/shop_pds/sbac/2020/eop-chang-pa-il15959024371595903445.jpg" class="rounded" alt="" style="height: 600px; border: 2px solid;"></a>
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
@@ -332,72 +376,110 @@
                 </div>
             </div>
 
-            <div class="section animated-row" data-section="slide03">
+
+
+
+            <div class="section animated-row" data-section="slide04">
                 <div class="section-inner">
                     <div class="row justify-content-center">
                         <div class="col-md-8 wide-col-laptop">
                             <div class="title-block animate" data-animate="fadeInUp">
-                                <span>Services</span>
-                                <h2>What I Do?</h2>
+                                <span></span>
+                                <h2>활용 사례</h2>
                             </div>
                             <div class="services-section">
                                 <div class="services-list owl-carousel">
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
-                                            <h3>Bootstrap Themes</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                            <span class="service-icon"><!--<i class="fa fa-bookmark" aria-hidden="true"></i>--></span>
+                                            <h4>경기도 김포소재 제지원단가공 제조업체 A사</h4>
+                                            <p style="font-size: 16px;">- 2017년 06 월 법인 설립, 2017년 월 매출 3천만원 <br>
+                                                - 2017년 06 월 컨설팅 계약체결 <br>
+                                                - 2017년 08 월 공장부지매입계약 (11억 4천만원) <br>  
+                                                - 창업사업승인 및 취등록세 75% 감면 <br> 
+                                                - 2018년 06 월 공장 부지매입 (기업은행 8억 승인) <br> 
+                                                - 2019년 01 월 공장 건축 360평 (중진공/기업은행 건축자금 6억 전액 승인) <br> 
+                                                - 2019년 01 월 운전자금 1억원 승인
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
-                                            <h3>HTML5 Coding</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                            <span class="service-icon"><!--<i class="fa fa-cloud" aria-hidden="true"></i>--></span>
+                                            <h4>인천 소재 플라스틱 사출 업사 A사 </h4>
+                                            <p style="font-size: 17px;">- 1996년 11 월 설립 개인사업자 연매출 10억원 <br>
+                                                - 국민은행, 씨티은행, 신용보증재단 기대출 3~4억원 있음 <br>
+                                                - 대표자 자금 직접 신청 하였으나 부결 <br>  
+                                                - 2020 년 08 월 최초상담 및 컨설팅 계약 체결 <br> 
+                                                - 2020 년 10 월 ISO9001/14001 인증 <br> 
+                                                - 2020년 10 월 기업부설연구소 (전담부서) 인증 <br>
+                                                - 2020년 10 월 운전자금 2억 승인 <br>  
+                                                - 2021년 03 월 공장구입자금 21억 승인 (자가공장 26억원 매입)
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
-                                            <h3>Fully Responsive</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                            <span class="service-icon"><!--<i class="fa fa-desktop" aria-hidden="true"></i>--></span>
+                                            <h4>경기도 파주 소재 플라스틱 압출업체 A사</h4>
+                                            <p style="font-size: 14px;">- 2017년 법인설립, 2018년 월매출 16억원, 2019년 연매출 28억원 <br>
+                                                - 2018년 10 월 컨설팅 계약체결 <br>
+                                                - 2018년 12 월 자본금 증자 <br>  
+                                                - 2019년 02 월 ISO9001/14001 인증<br> 
+                                                - 2019년 05 월 운전자금 3억원 승인 <br> 
+                                                - 2019년 07 월 공장 부지 매입자금 4.1억 승인 (공장부지 7.3억원 매입) <br>
+                                                - 창업사업승인 및 취등록세 75% 감면 <br>  
+                                                - 2020년 04 월 공장 건축 340평 (기업은행 건축자금 10억원 전액 승인) <br>  
+                                                - 2020년 05 월 제조 설비 구입자금 2억원 승인
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
-                                            <h3>Mobile Ready</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                            <span class="service-icon"><!--<i class="fa fa-bookmark" aria-hidden="true"></i>--></span>
+                                            <h4>경기도 김포소재 제지원단가공 제조업체 A사</h4>
+                                            <p style="font-size: 16px;">- 2017년 06 월 법인 설립, 2017년 월 매출 3천만원 <br>
+                                                - 2017년 06 월 컨설팅 계약체결 <br>
+                                                - 2017년 08 월 공장부지매입계약 (11억 4천만원) <br>  
+                                                - 창업사업승인 및 취등록세 75% 감면 <br> 
+                                                - 2018년 06 월 공장 부지매입 (기업은행 8억 승인) <br> 
+                                                - 2019년 01 월 공장 건축 360평 (중진공/기업은행 건축자금 6억 전액 승인) <br> 
+                                                - 2019년 01 월 운전자금 1억원 승인
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                                            <h3>Fast Support</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                            <span class="service-icon"><!--<i class="fa fa-cloud" aria-hidden="true"></i>--></span>
+                                            <h4>인천 소재 플라스틱 사출 업사 A사 </h4>
+                                            <p style="font-size: 17px;">- 1996년 11 월 설립 개인사업자 연매출 10억원 <br>
+                                                - 국민은행, 씨티은행, 신용보증재단 기대출 3~4억원 있음 <br>
+                                                - 대표자 자금 직접 신청 하였으나 부결 <br>  
+                                                - 2020 년 08 월 최초상담 및 컨설팅 계약 체결 <br> 
+                                                - 2020 년 10 월 ISO9001/14001 인증 <br> 
+                                                - 2020년 10 월 기업부설연구소 (전담부서) 인증 <br>
+                                                - 2020년 10 월 운전자금 2억 승인 <br>  
+                                                - 2021년 03 월 공장구입자금 21억 승인 (자가공장 26억원 매입)
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-database" aria-hidden="true"></i></span>
-                                            <h3>24-hour Up Time</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                            <span class="service-icon"><!--<i class="fa fa-desktop" aria-hidden="true"></i>--></span>
+                                            <h4>경기도 파주 소재 플라스틱 압출업체 A사</h4>
+                                            <p style="font-size: 14px;">- 2017년 법인설립, 2018년 월매출 16억원, 2019년 연매출 28억원 <br>
+                                                - 2018년 10 월 컨설팅 계약체결 <br>
+                                                - 2018년 12 월 자본금 증자 <br>  
+                                                - 2019년 02 월 ISO9001/14001 인증<br> 
+                                                - 2019년 05 월 운전자금 3억원 승인 <br> 
+                                                - 2019년 07 월 공장 부지 매입자금 4.1억 승인 (공장부지 7.3억원 매입) <br>
+                                                - 창업사업승인 및 취등록세 75% 감면 <br>  
+                                                - 2020년 04 월 공장 건축 340평 (기업은행 건축자금 10억원 전액 승인) <br>  
+                                                - 2020년 05 월 제조 설비 구입자금 2억원 승인
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-bell" aria-hidden="true"></i></span>
-                                            <h3>Instant Upgrades</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-camera" aria-hidden="true"></i></span>
-                                            <h3>Always Monitoring</h3>
-                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -405,55 +487,14 @@
                 </div>
             </div>
 
-            <div class="section animated-row" data-section="slide04">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>My Skills</span>
-                                <h2>What i’m good?</h2>
-                            </div>
-                            
-                            <div class="skills-row animate" data-animate="fadeInDown">
-                                <div class="row">
-                                    <div class="col-md-8 offset-md-2">   
-                                        <div class="skill-item">
-                                            <h6>HTML CSS</h6>
-                                            <div class="skill-bar">
-                                                <span>70%</span>
-                                                <div class="filled-bar"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item">
-                                            <h6>PSD Design</h6>
-                                            <div class="skill-bar">
-                                                <span>90%</span>
-                                                <div class="filled-bar-2"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item">
-                                            <h6>Social Media</h6>
-                                            <div class="skill-bar">
-                                                <span>70%</span>
-                                                <div class="filled-bar"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item last-skill">
-                                            <h6>Leadership</h6>
-                                            <div class="skill-bar">
-                                                <span>90%</span>
-                                                <div class="filled-bar-2"></div>
-                                            </div>          
-                                        </div>     
-                                                   
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
+
+
+
+
 
             <div class="section animated-row" data-section="slide06">
                 <div class="section-inner">
@@ -591,43 +632,50 @@
                                 <div class="testimonials-section">
                                     <div class="testimonials-slider owl-carousel">
                                         <div class="item animate" data-animate="fadeInUp">
-                                            <div class="testimonial-item" style="padding-top: 110px;">
+                                            <div class="testimonial-item" >
                                                 <div class="client-row">
-                                                    
+                                                        
                                                 </div>
                                                 <div class="testimonial-content" >
-                                                    
-                                                    <p>정부로부터 지원되는 여러 형태의 지원정책 중에서 평가결과 일정 기업평가등급 또는 <br> 일정기준 이상인 기업을 대상으로 지원여부를 결정하여 정책자금일을 지원하는 건설팅</p>
-                                                    <span>더 낮은 금리로 대환 대출 가능 (높은 금리 > 1~3% 조정가능)</span>
+
+                                                    <h4 style="color: black;">소상공인</h4>
+                                                    <img src="http://중소기업경영지원센터.com/wysiwyg/PEG/se2_15506503215951.jpg" alt="">
                                                 </div>                                           
                                             </div>
                                         </div>
                                         <div class="item animate" data-animate="fadeInUp">
-                                            <div class="testimonial-item" style="padding-top: 110px;">
+                                            <div class="testimonial-item" >
                                                 <div class="client-row">
-                                                    
+                                                        
                                                 </div>
                                                 <div class="testimonial-content">
-                                                    <h4>창업 기업 지원 자금</h4>
-                                                    <p>우수한 기술력과 사업성은 있으나 자금력이 부족한 중소,벤처기업의 창업을 활성화하고 고용창출을 도모</p>
-                                                    <p></p>
-                                                    <p></p>
-                                                    <p></p>
-                                                    <span>CEO and Founder</span>
+                                                    <h4 style="color: black;">창업자금</h4>
+                                                    <img src="http://중소기업경영지원센터.com/wysiwyg/PEG/se2_15506502050183.jpg" alt="">
                                                 </div>                                           
                                             </div>
                                         </div>
                                         <div class="item animate" data-animate="fadeInUp">
                                             <div class="testimonial-item">
                                                 <div class="client-row">
-                                                    <img src="{{ url_for('static', filename='images/profile-girl.jpg') }}" class="rounded-circle" alt="profile 3">
+                                                        
                                                 </div>
                                                 <div class="testimonial-content">
-                                                    <h4>Marlar</h4>
-                                                    <p>"Etiam efficitur, tortor facilisis finibus semper, diam magna fringilla lectus, et fringilla felis urna posuere tortor."</p>
-                                                    <span>Chief Marketing Officer</span>
+                                                    <h4 style="color: black;">운전자금</h4>
+                                                    <img src="http://중소기업경영지원센터.com/wysiwyg/PEG/se2_15506523486047.jpg" alt="">
                                                 </div>                                           
                                             </div>
+                                        </div>
+                                            <div class="item animate" data-animate="fadeInUp">
+                                                <div class="testimonial-item">
+                                                    <div class="client-row">
+                                                        
+                                                    </div>
+                                                    <div class="testimonial-content">
+                                                        <h4 style="color: black;">시설자금</h4>
+                                                        <img src="http://중소기업경영지원센터.com/wysiwyg/PEG/se2_15506513528520.jpg" alt="">
+                                                    </div>                                           
+                                                </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -656,11 +704,15 @@
                                                 <i class="fa fa-phone"></i> 010-3370-8136
                                             </div>
                                             <div class="contact-row">
-                                                <i class="fa fa-envelope"></i> info@company.co
+                                                <i class="fa fa-envelope"></i> bmakerp@naver.com
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-md-6 animate" data-animate="fadeInUp">
+
+
                                         <form name="formmail" method="get" action="data.php" onSubmit="return chkMailFrm()">
                                             <a name=01></a>    
                                             <table width="0" border="0" cellspacing="0" cellpadding="0">
@@ -677,44 +729,44 @@
                                               
                                                     
                                                     <table width="100" border="0" cellpadding="0" cellspacing="5">
-                                                      <tr>
-                                                        <td width="100" align="center"><font color="#663300"><p style="width: max-content;">제목</p></font></td>
-                                                        <td width="500" align="left"><input type="text" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 25px" name="title"
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td width="100" align="left"><font><p style="width: 32px; margin: 0 5px 0px ;">제목</p></font></td>
+                                                        <td width="500" align="left"><input type="text" style="border-radius: 7px; BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px" name="title"
                                                          size="32" /></td>
                                                       </tr>
-                                                      <tr>
-                                                        <td align="center"><p style="width: max-content;">성함</p></td>
-                                                        <td align="left"><input type="text" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 25px" name="senduser"
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td align="left"><p style="width: 32px; margin: 0 5px 0px  ;">성함</p></td>
+                                                        <td align="left"><input type="text" style=" border-radius: 7px; BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px" name="senduser"
                                                          size="32" /></td>
                                                       </tr>
-                                                      <tr>
-                                                        <td align="center"><p style="width: max-content;">핸드폰</p></td>
-                                                        <td align="left"><input type="text" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 25px" name="phone"
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td align="left"><p style="width: 50px; margin: 0 5px  0px ;">핸드폰</p></td>
+                                                        <td align="left"><input type="text" style=" border-radius: 7px; BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px" name="phone"
                                                          size="32" /></td>
                                                       </tr>
-                                                      <tr>
-                                                        <td align="center"><p style="width: max-content;">이메일</p></td>
-                                                        <td align="left"><input type="text" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 25px" name="email"
-                                                         size="32"></td>
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td align="left"><p style="width: 50px; margin: 0 5px 0px ;">이메일</p></td>
+                                                        <td align="left"><input type="text" style="border-radius: 7px;  BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px" name="email"
+                                                         size="32"/ ></></td>
                                                       </tr>
                                             
-                                                      <tr>
-                                                        <td align="center"><font color="#663300"><p style="width: max-content;">나이</p> </font></td>
-                                                        <td align="left"><input type="text" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 25px" name="age"
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td align="left"><font ><p style="width: 32px; margin: 0 5px 0px ;">나이</p> </font></td>
+                                                        <td align="left"><input type="text" style="border-radius: 7px;  BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px" name="age"
                                                          rows="5" cols="26"></input></td>
                                                       </tr>
                                             
-                                                      <tr>
-                                                        <td align="center"><font color="#663300"><p style="width: max-content;">창업 종목</p> </font></td>
-                                                        <td align="left"><input style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 25px" name="startup"
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td align="left"><font ><p style="width: 70px; margin: 0 5px 0px ;">창업 종목</p> </font></td>
+                                                        <td align="left"><input style="border-radius: 7px;  BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px" name="startup"
                                                          rows="5" cols="26"></input></td>
                                                       </tr>
                                             
                                             
                                             
-                                                      <tr>
-                                                        <td align="center"><font color="#663300"><p style="width: max-content;">내용</p> </font></td>
-                                                        <td align="left"><textarea style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 198px" name="body"
+                                                      <tr style="border-bottom: 10px solid transparent;">
+                                                        <td align="left"><font ><p style="width: 32px; margin: 0 5px 0px ;">내용</p> </font></td>
+                                                        <td align="left"><textarea style="border-radius: 7px;  BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; WIDTH: 350px; COLOR: #333333; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 198px" name="body"
                                                          rows="5" cols="26"></textarea></td>
                                                       </tr>
                                                       <tr align="left">
@@ -722,11 +774,16 @@
                                                       </tr>
                                                       <tr>
                                                         <td>&nbsp;</td>
-                                                        <td  align="right"><input name="submit" type="image" value="신청하기"  src="{{ url_for('static', filename='images/pngwing.com (5).png') }}" style="width: 45px; height: 45px;" />
-                                                         <!-- <a onclick="reset();" style="height:40px;"><img src="images/can.jpg"  border="0" /></a>--></td>
+                                                        <td  align="right"><input name="submit" type="image" value="신청하기" src= "{{ url_for('static', filename='images/submit.png') }}"   style="width: 130px;" />
+                                                        
+                                                          <!--<a onclick="reset();" style="height:40px;"><img src="images/can.jpg"  border="0" /></a>-->
+                                                        </td>
                                                       </tr>
-                                                    </table></td>
-                                                    <td></td>
+                                                    </table>
+                                                </td>
+                                                    <td>
+
+                                                    </td>
                                                   </tr>
                                                 </table>
                                                 </td>
@@ -746,52 +803,37 @@
             </div>
         </div>
 
-
-
-
-
-
-
         <div id="social-icons">
             <div class="text-right">
                 <ul class="social-icons">
                     <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <a href="https://pf.kakao.com/_xgGnxes" target="_blank" title="kakao" style="cursor: pointer; width: 60px; position: fixed; right: 20px; top: 460px;"><img src="https://kkukowiki.kr/images/thumb/3/31/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EC%9B%90_%EB%A1%9C%EA%B3%A0.png/60px-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EC%9B%90_%EB%A1%9C%EA%B3%A0.png" alt=""></a>
                     <li><a href="#" title="Instagram"><i class="fa fa-behance"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>  
 
+    
+    
 
 
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
+    <script type="text/javascript" src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
 
-    <!--flask script-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scrolloverflow.js') }}"></script>
 
-      <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
 
-      <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
 
+    <script type="text/javascript" src="{{ url_for('static', filename='js/form.js') }}"></script>
 
-      <script type="text/javascript" src="{{ url_for('static', filename='js/form.js') }}"></script>
-
-      <script type="text/javascript" src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
-
-      <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
-
-      <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-
-      <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
-
-      <script type="text/javascript" src="{{ url_for('static', filename='js/scrolloverflow.js') }}"></script>
-
-
-git remote add origin <https://github.com/ijy0422/landing.git>
-git remote
-
+    <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
 
   </body>

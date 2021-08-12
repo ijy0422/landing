@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for
+
 app = Flask(__name__)
 
 import crawling
@@ -45,4 +46,4 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6112, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
